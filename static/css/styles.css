@@ -1,6 +1,19 @@
 body {
     text-align: center;
-    <!--background-color: #639a67-->
+    
+}
+
+.bg {
+  /* The image used */
+  background-image: url("https://www.purdue.edu/hr/CHL/no-cost_Wellness/images/diabetes-banner.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
