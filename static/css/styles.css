@@ -1,6 +1,6 @@
 body {
     text-align: center;
-     background-image: url("https://www.purdue.edu/hr/CHL/no-cost_Wellness/images/diabetes-banner.jpg");
+      background-color: #f27a02;
     
 }
 
@@ -9,6 +9,7 @@ header {
     font-family: 'Ultra', serif;
     padding-top: 40;
     padding-bottom: 40;
+    background-color: #2b580c
     color: #d8ebb5;
 }
 
