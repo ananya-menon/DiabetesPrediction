@@ -21,9 +21,9 @@ def predict():
     output = prediction[0]
 
     if output == 0:
-        return render_template('home.html', prediction_text= 'Diabetes : No')
+        return render_template('home.html', prediction_text= 'PCOS : No')
     else:
-        return render_template('home.html', prediction_text= 'Diabetes : Yes')
+        return render_template('home.html', prediction_text= 'PCOS: Yes')
 
 
 if __name__ == "__main__":
