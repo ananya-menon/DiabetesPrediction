@@ -227,9 +227,9 @@ cm = confusion_matrix(y_test, y_pred)
 cm
 print(classification_report(y_test, y_pred))
 
-filename = 'PCOS.pkl'
+filename = 'diabetes_model123.pkl'
 pickle.dump(classifier_forest, open(filename, 'wb'))
-model = open('PCOS.pkl','rb') 
+model = open('diabetes_model123.pkl','rb') 
 forest = pickle.load(model)
 y_pred = forest.predict(X_test)
 confusion_matrix(y_test, y_pred)
