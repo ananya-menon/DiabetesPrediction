@@ -16,7 +16,7 @@ import scipy
 
 
 sns.set()
-data = pd.read_csv('PCOS_infertility.csv')
+data = pd.read_csv('PCOS_infertility1.csv')
 data.head()
 data.shape 
 data.info()
@@ -182,7 +182,7 @@ cm
 # cm = confusion_matrix(y_test, y_pred)
 # cm
 pd.crosstab(y_test, y_pred, rownames=['True'], colnames=['Predicted'], margins=True)
-data['Outcome'].value_counts()
+data['PCOS (Y/N)'].value_counts()
 from sklearn.metrics import roc_auc_score, roc_curve, classification_report
 print(classification_report(y_test, y_pred))
 y_pred_prob = classifier_forest.predict_proba(X_test)[:,1]
