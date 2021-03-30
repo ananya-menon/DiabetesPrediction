@@ -16,9 +16,9 @@ import scipy
 
 
 sns.set()
-data = pd.read_csv('diabetes.csv')
+data = pd.read_csv('PCOS_infertility.csv')
 data.head()
-data.shape
+data.shape 
 data.info()
 data.describe().T
 data_feature = data.columns
@@ -26,30 +26,30 @@ data_feature = data.columns
 for feature in data_feature:
     p = sns.distplot(a = data[feature])
     plt.show()
-data_zeros = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
-data[data_zeros] = np.where((data[data_zeros] == 0), np.nan, data[data_zeros])
-data.isnull().sum()
+#data_zeros = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
+#data[data_zeros] = np.where((data[data_zeros] == 0), np.nan, data[data_zeros])
+#data.isnull().sum()
 # for feature in data_feature:
 #     plt.hist(data[feature])
 #     plt.show()
 p = data.hist(figsize = (20,20))
 data.describe().T
-data['Glucose'] = data['Glucose'].fillna(data['Glucose'].mean())
+#data['Glucose'] = data['Glucose'].fillna(data['Glucose'].mean())
 # data.isnull().sum()
-data['BloodPressure'] = data['BloodPressure'].fillna(data['BloodPressure'].mean())
+#data['BloodPressure'] = data['BloodPressure'].fillna(data['BloodPressure'].mean())
 # data.isnull().sum()
 sns.boxplot(y = 'SkinThickness', data = data)
-data['SkinThickness'].mean(), data['SkinThickness'].median() 
-data['SkinThickness'] = data['SkinThickness'].fillna(data['SkinThickness'].median())
+#data['SkinThickness'].mean(), data['SkinThickness'].median() 
+#data['SkinThickness'] = data['SkinThickness'].fillna(data['SkinThickness'].median())
 # data.isnull().sum()
-data['Insulin'].mean(), data['Insulin'].median() 
-data['Insulin'] = data['Insulin'].fillna(data['Insulin'].median())
+#data['Insulin'].mean(), data['Insulin'].median() 
+#data['Insulin'] = data['Insulin'].fillna(data['Insulin'].median())
 # data.isnull().sum()
-data['BMI'].mean(), data['BMI'].median() 
-data['BMI'] = data['BMI'].fillna(data['BMI'].median())
+#data['BMI'].mean(), data['BMI'].median() 
+#data['BMI'] = data['BMI'].fillna(data['BMI'].median())
 # data.isnull().sum()
-for i in range(9):
-    print(data.columns[i])
+#for i in range(9):
+    #print(data.columns[i])
 # for feature in data.columns:
 #     plt.hist(data[feature])
 #     plt.title(feature)
@@ -227,9 +227,9 @@ cm = confusion_matrix(y_test, y_pred)
 cm
 print(classification_report(y_test, y_pred))
 
-filename = 'diabetes_model.pkl'
+filename = 'PCOS.pkl'
 pickle.dump(classifier_forest, open(filename, 'wb'))
-model = open('diabetes_model.pkl','rb')
+model = open('PCOS.pkl','rb') 
 forest = pickle.load(model)
 y_pred = forest.predict(X_test)
 confusion_matrix(y_test, y_pred)
